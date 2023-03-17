@@ -15,42 +15,105 @@
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">ASP.NET Core</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
+        <nav>
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Weblue</span>
+            </div>
+
+            <div class="sidebar">
+                <div class="logo">
+                    <i class="bx bx-menu menu-icon"></i>
+                    <span class="logo-name">Weblue</span>
+                </div>
+
+                <div class="sidebar-content">
+                    <ul class="lists">
+                        <li class="list">
+                            <a class="nav-link" asp-area="" asp-page="/Index">
+                                <i class="bx bx-home-alt icon"></i>
+                                <span class="link">Home</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/articles/11963">Minecraft</a>
+                        <li class="list">
+                            <a class="nav-link" asp-area="" asp-page="/articles/11963">
+                                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                                <span class="link">Minecraft</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/About">About</a>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-bell icon"></i>
+                                <span class="link">Notifications</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Contact">Contact</a>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-message-rounded icon"></i>
+                                <span class="link">Messages</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-pie-chart-alt-2 icon"></i>
+                                <span class="link">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-heart icon"></i>
+                                <span class="link">Likes</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-folder-open icon"></i>
+                                <span class="link">Files</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="bottom-cotent">
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-cog icon"></i>
+                                <span class="link">Settings</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class="bx bx-log-out icon"></i>
+                                <span class="link">Logout</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <section class="overlay"></section>
+
+        <script>
+            const navBar = document.querySelector("nav"),
+                menuBtns = document.querySelectorAll(".menu-icon"),
+                overlay = document.querySelector(".overlay");
+
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    navBar.classList.toggle("open");
+                });
+            });
+
+            overlay.addEventListener("click", () => {
+                navBar.classList.remove("open");
+            });
+        </script>
     </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
