@@ -155,6 +155,55 @@ body {
 /*--------------------------------------------------------------
 3.0 TYPOGRAPHY
 --------------------------------------------------------------*/
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #E3F2FD;
+}
+.download-btn{
+  outline: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  padding: 16px 25px;
+  border-radius: 6px;
+  align-items: center;
+  white-space: nowrap;
+  background: #4A98F7;
+  transition: all 0.2s ease;
+}
+.download-btn:hover{
+  background: #2382f6;
+}
+.download-btn.timer{
+  color: #000;
+  background: none;
+  transition: none;
+  font-size: 1.6rem;
+  pointer-events: none;
+}
+.download-btn.timer b{
+  color: #4A98F7;
+  padding: 0 8px;
+}
+.download-btn .icon{
+  font-size: 2rem;
+}
+.download-btn .text{
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
 .articleSection {
 
   	padding: 101px 0 35px 0;  }
@@ -182,31 +231,17 @@ body {
     touch-action: manipulation;
     vertical-align: middle;
     white-space: nowrap;
-
-  
-
     column-rule-color: rgb(255, 255, 255);
-
     perspective-origin: 58.8438px 17px;
-
     transform-origin: 58.8438px 17px;
-
     user-select: none;
-
     caret-color: rgb(255, 255, 255);
-
     background: rgb(51, 122, 183) none repeat scroll 0% 0% / auto padding-box border-box;
-
     border: 1px solid rgb(46, 109, 164);
-
     border-radius: 4px 4px 4px 4px;
-
    font: 15px / 21.4286px "minecraft_rusregular", Helvetica, Arial, sans-serif;
-
     outline: rgb(255, 255, 255) none 0px;
-
     padding: 6px 12px;
-
 }
 
 a {
@@ -780,7 +815,7 @@ div label[for=ui-component-toggle__yearly] {
   .ui-layout-grid-3 {
     column-gap: var(--ui-layout-gutter);
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    justify-items: center;del
   }
 
   .ui-layout-grid-3 div:nth-of-type(3) {
